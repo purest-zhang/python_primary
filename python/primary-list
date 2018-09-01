@@ -1,1 +1,8 @@
+# 向列表中插入一个数据，有三种方式。
+name_list = ["dome",20,18]
+# insert()： 向列表指定的下表插入一个数据，原数据和原数据之后数据向后移动一位
+name_list.insert(2,"ermao")
+print(name_list)
+name_list.insert(1,67)
+print(name_list)
 
