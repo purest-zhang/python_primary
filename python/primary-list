@@ -1,8 +1,86 @@
-# 向列表中插入一个数据，有三种方式。
+### 向列表中插入一个数据，有三种方式。
 name_list = ["dome",20,18]
 # insert()： 向列表指定的下表插入一个数据，原数据和原数据之后数据向后移动一位
-name_list.insert(2,"ermao")
+name_list.insert(2, "ermao") # 2代表索引，后面代表添加的内容
 print(name_list)
-name_list.insert(1,67)
+name_list.insert(1, 67)
 print(name_list)
+# append(): 在列表末尾追加一个任何类型的数据
+name_list.append("sanmao")
+name_list.append(16)
+name_list.append([100, 200, 300])  # 添加原有的数据的类型
+print(name_list)
+# extend(): 在列表末尾追加数据
+name_list.extend(["simao", 14, "wumao", 12])  # 把列表数据拆分出来追加到列表末尾
+print(name_list)
+
+
+### 列表的查询和统计
+#  in /not in: 判断数据是否存在列表中
+name_list = ['dome', 67, 20, 'ermao', 18, 'sanmao', 16, [100, 200, 300], 'simao', 14, 'wumao', 12]
+"""if "ermao" in name_list:
+    print("ermao在这，快抓住他！")
+else:
+    print("没找到，继续搜索1")
+"""
+if "liumao" in name_list:
+    print("非常好，抓住他")
+else:
+    name_list.append("liumao")
+    print(name_list)
+# index(): 返回列表里指定元素的下标（若没有则报错）
+cha = "qimao"
+if cha in name_list:
+    cha = name_list.index("qimao")
+    print(cha)
+else:
+    print("数据不存在！！！")
+
+# count():  返回列表里指定元素的个数（若没有则返回 0）
+print(name_list.count([100,200,300]))
+print(name_list.count("sanmao"))
+
+### 列表的修改和删除
+name_list = ['dome', 67, 20, 'ermao', 18, 'sanmao', 16, [100, 200, 300], 'simao', 14, 'wumao', 12, 'liumao']
+print(name_list)
+name_list[6] = [10,20,30]
+print(name_list)
+# index(): 有则返回元素的下标,没有则报错,则加入循环使其不用报错
+if [100, 200, 300] in name_list:
+    name_list[name_list.index([100, 200, 300])] = "Hello List"
+else:
+    print("数据不存在")
+print(name_list)
+
+### 数据的删除
+"""
+remove：根据元素的值进行删除
+pop：删除最后一个元素
+del：根据下标进行删除
+"""
+# remove(): 删除列表内指定的数据
+name_list.remove("Hello List")
+print(name_list)
+# pop(): 删除指定下标的数据并返回该数据，若无则默认最后一个数据。
+name1 = name_list.pop(5)
+print(name1)  # 返回删除的元素的值
+print(name_list) #打印删除后的列表
+name2 = name_list.pop()  # 默认删除最后一个元素
+print(name2)
+print(name_list)
+
+# clear():  清空一个列表的所有数据，但不删除列表
+#name_list.clear()
+#print(name_list)
+# del(): python提供的删除方式，可以删除任何数据，或者列表里某个下标的元素。
+del name_list[0]
+print(name_list)
+del name_list
+print(name_list)
+
+
+
+
+
+
 
