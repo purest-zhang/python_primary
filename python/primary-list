@@ -79,6 +79,71 @@ del name_list
 print(name_list)
 
 
+### 9-2号
+### 列表数据的排序和逆置
+# sort(): 原始数据上排序和修改
+num_list = [123, 10, 0, -5, 100]
+
+print(num_list)
+# 默认从小到大排序
+num_list.sort()
+print(num_list)
+# 参数reverse = Ture , 表示从大到小排序(默认reverse = False)
+num_list.reverse()
+print(num_list)
+# sorted(): Python提供的方法，返回排序后的新列表，原列表不变
+str_list = ["aBCD", "caaa", "Adafew"]
+sortedstr_list = sorted(str_list)  # 默认从小到大排序
+print(str_list)        #  原列表
+print(sortedstr_list)  #  新列表
+
+# reverse = Ture 表示从大到小排序
+sortedstr_list2 = sorted(str_list, reverse=True)  # 从大到小排序
+print(sortedstr_list2)
+### 比较pythonic 的列表处理
+# 生成一个1~21之间所有偶数的列表
+# 1.直接创建列表
+num_list1 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+print(num_list1)
+# 2.利用range() 函数生成等差数列
+num_list2 = list(range(2, 21, 2))  # 2 表示等差数列为 p=2
+print(num_list2)
+# 3.while 循环
+num_list3 = []  # 先传一个列表
+i = 2
+while i <= 20:
+    if i % 2 == 0:  # 取偶数
+        num_list3.append(i)
+    i += 1
+print(num_list3)
+### for 迭代 + range()
+num_list4 = []
+for i in range(1, 21):  # for 迭代
+    if i % 2 == 0:
+        num_list4.append(i)
+print(num_list4)
+# 列表推导式（列表生成式）
+num_list5 = [i for i in range(1, 21) if i % 2 == 0]
+print(num_list5)
+num_list7 = [i for i in range(1, 21) if i % 2 == 1]
+print(num_list7)
+## 成成一个1~21之间所有的偶数的平方的列表
+num_list6 = [i**2 for i in range(1, 21) if i % 2 == 0]
+print(num_list6)
+# 生成10个 “666”的列表
+num_list8 = ["666" for i in range(10)]
+print(num_list8)
+# ['damao',10,'ermao',20] 获取列表里长度大于3的字符串
+lis = ['damao', 10, 'ermao', 20]
+num_list9 = [i for i in lis if len(str(i)) > 3]
+print(num_list9)
+# 生成一个“888”的列表
+num_list10 = ["888" for i in range(20)]
+print(num_list10)
+# ['sammaohaha',4567789,‘zhangzhenyu’] 获取列表长度大于4的字符串
+woname = ['sammaohaha', 4567789, 'zhangzhenyu']
+num_list11 = [i for i in woname if len(str(i)) > 4]
+print(num_list11)
 
 
 
